@@ -1,0 +1,3073 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Device xmlns="unican_device_schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="unican_device_schema unican_device_schema.xsd">
+	<DevModel>UHF_msgid</DevModel>
+	<DevDesc/>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>43760</PacId>
+		<PacName>reset_software</PacName>
+		<PacDesc>Reset device</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>280</PacId>
+		<PacName>ACK</PacName>
+		<PacDesc>Successful command confirmation</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>281</PacId>
+		<PacName>NACK</PacName>
+		<PacDesc>Command error</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>64768</PacId>
+		<PacName>set_active_CAN_iface</PacName>
+		<PacDesc>Choose active CAN interface(valid values - 0, 1)</PacDesc>
+		<DataLen>1</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>65504</PacId>
+		<PacName>request_version</PacName>
+		<PacDesc>Request software version</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>65505</PacId>
+		<PacName>version_sw</PacName>
+		<PacDesc>Current software version</PacDesc>
+		<DataLen>3</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>major</FldName>
+			<FldDesc>Major version.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>minor</FldName>
+			<FldDesc>Minor version.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>8</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>extra</FldName>
+			<FldDesc>Extra version.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>16</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>65506</PacId>
+		<PacName>version_sw_hash</PacName>
+		<PacDesc>Firmware commit hash</PacDesc>
+		<DataLen>5</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>hash32</FldName>
+			<FldDesc>Commite hash.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>is_dirty</FldName>
+			<FldDesc>Dirty bit.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>39</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>1025</PacId>
+		<PacName>posix_time</PacName>
+		<PacDesc/>
+		<DataLen>4</DataLen>
+		<Field>
+			<FldType>time_t</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>256</PacId>
+		<PacName>reset_report</PacName>
+		<PacDesc/>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>257</PacId>
+		<PacName>heartbeat</PacName>
+		<PacDesc/>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>288</PacId>
+		<PacName>bootloader_mode_normal</PacName>
+		<PacDesc>Set the normal operating mode of the bootloader
+The bootloader transfers control to the main software, and the next reboot does not perform flashing</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>289</PacId>
+		<PacName>bootloader_mode_stay_for_one_reset</PacName>
+		<PacDesc>Reboot and stay in bootloader once.
+Valid for one reboot, then the bootloader returns to normal operation</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>290</PacId>
+		<PacName>bootloader_mode_stay_until_new_mode_in_flash</PacName>
+		<PacDesc>Reboot and stay in bootloader.
+All subsequent reboots are valid until the operating mode is changed forcibly</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>4593</PacId>
+		<PacName>fwupdate_enter_memmode</PacName>
+		<PacDesc>Switching memory mode(not used)</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>43776</PacId>
+		<PacName>fwupdate_erase</PacName>
+		<PacDesc>Erase memory device at the address.</PacDesc>
+		<DataLen>8</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>addr</FldName>
+			<FldDesc>Address in device memory.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>size</FldName>
+			<FldDesc>Buffer size.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>43777</PacId>
+		<PacName>fwupdate_program</PacName>
+		<PacDesc>Write to device memory at the address.</PacDesc>
+		<DataLen>6</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>addr</FldName>
+			<FldDesc>Address in device memory</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>size</FldName>
+			<FldDesc>Size in bytes.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>file</FldType>
+			<FldName>data</FldName>
+			<FldDesc>Data.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>48</FldOffset>
+			<FldLen>0</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>43778</PacId>
+		<PacName>fwupdate_program64</PacName>
+		<PacDesc>Write in blocks of 64 bits to device memory</PacDesc>
+		<DataLen>4</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>43523</PacId>
+		<PacName>fwupdate_memset_report</PacName>
+		<PacDesc>Memory write report.
+Response to write and erase memory operations</PacDesc>
+		<DataLen>6</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>addr</FldName>
+			<FldDesc>Address in device memory.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>err</FldName>
+			<FldDesc>Error code(0 - no errors, 273 - write error)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>43520</PacId>
+		<PacName>fwupdate_update</PacName>
+		<PacDesc>Reflash the device from memory.
+ATTENTION! This command should only be performed by qualified personnel during the device flashing cycle</PacDesc>
+		<DataLen>12</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>addr</FldName>
+			<FldDesc>Address of the new firmware placement.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>crc32</FldName>
+			<FldDesc>CRC32 checksum.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>size</FldName>
+			<FldDesc>The size of the new firmware.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>64</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>43781</PacId>
+		<PacName>fwupdate_verify_rq</PacName>
+		<PacDesc>CRC32 request for the specified memory area.</PacDesc>
+		<DataLen>8</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>addr</FldName>
+			<FldDesc>Address in device memory.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>size</FldName>
+			<FldDesc>Buffer size.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>43525</PacId>
+		<PacName>fwupdate_verify_report</PacName>
+		<PacDesc>CRC32 checksum for specified memory area.
+Comes as a response to a CRC32 calculation request</PacDesc>
+		<DataLen>12</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>addr</FldName>
+			<FldDesc>Address in device memory.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>size</FldName>
+			<FldDesc>Buffer size.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>crc32</FldName>
+			<FldDesc>CRC32 checksum.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>64</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>43782</PacId>
+		<PacName>memio_read_rq</PacName>
+		<PacDesc>Reading a memory area by address.</PacDesc>
+		<DataLen>8</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>addr</FldName>
+			<FldDesc>Address in device memory.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>size</FldName>
+			<FldDesc>Buffer size.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>43526</PacId>
+		<PacName>memio_read_report</PacName>
+		<PacDesc>Memory area read report.</PacDesc>
+		<DataLen>6</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>addr</FldName>
+			<FldDesc>Address in device memory</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>size</FldName>
+			<FldDesc>Size in bytes.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>file</FldType>
+			<FldName>data</FldName>
+			<FldDesc>Data.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>48</FldOffset>
+			<FldLen>0</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>43783</PacId>
+		<PacName>memio_write_rq</PacName>
+		<PacDesc>Write memory area at the address.</PacDesc>
+		<DataLen>6</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>addr</FldName>
+			<FldDesc>Address in device memory</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>size</FldName>
+			<FldDesc>Size in bytes.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>file</FldType>
+			<FldName>data</FldName>
+			<FldDesc>Data.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>48</FldOffset>
+			<FldLen>0</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>60929</PacId>
+		<PacName>fwupdate_bootldr_st</PacName>
+		<PacDesc>Confirmation of command to stay in bootloader Sent when the download is interrupted after the device starts by the command stay in bootloader.</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16896</PacId>
+		<PacName>set_AllConfiguration</PacName>
+		<PacDesc>Set full UHF config.
+Set all the current configuration of the UHF transceiver in one package, without writing to the nonvolatile memory. ATTENTION! This command is technological, its use without control of all transmitted parameters threatens the loss of the SC!</PacDesc>
+		<DataLen>73</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Magic</FldName>
+			<FldDesc>Technology field, always 0x12345679.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Frequency</FldName>
+			<FldDesc>Frequency, Hz</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>BitRate</FldName>
+			<FldDesc>Bitrate, baud (typical values: 4800, 9600, 19200)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>64</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>DAC1Setting</FldName>
+			<FldDesc>DAC1 calibration value.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>96</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>DAC2Setting</FldName>
+			<FldDesc>DAC2 calibration value.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>112</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>PacketMode</FldName>
+			<FldDesc>Packet mode (0 - USP, 1 - AX.25)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>128</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>EnableBeacon</FldName>
+			<FldDesc>Activation of automatic beacon transmission (1 - active)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>136</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>BeaconInterval</FldName>
+			<FldDesc>Beacon interval, s.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>144</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>string</FldType>
+			<FldName>CallSign</FldName>
+			<FldDesc>Radio callsign of onboard transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>160</FldOffset>
+			<FldLen>56</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>SSID</FldName>
+			<FldDesc>Unique number of the onboard transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>216</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>string</FldType>
+			<FldName>EarthCallSign</FldName>
+			<FldDesc>Radio callsign of the ground control transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>224</FldOffset>
+			<FldLen>56</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>EarthSSID</FldName>
+			<FldDesc>Unique number of the ground transmitter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>280</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Location</FldName>
+			<FldDesc>Operating mode (0-onboard, 1-ground)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>288</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>UNIcanID</FldName>
+			<FldDesc>UniCAN device's own address</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>296</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>EnableBridge</FldName>
+			<FldDesc>Activate bridge mode with onboard network</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>312</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>BeaconStartupDelay</FldName>
+			<FldDesc>Set Beacon startup delay</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>320</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>DeployStartupDelay</FldName>
+			<FldDesc>Antenna deployment system activation timer.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>336</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>DeployBurnTime</FldName>
+			<FldDesc>Antenna deployment system shutdown timer, s</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>352</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>DeployMode</FldName>
+			<FldDesc>Antenna deployment system mode(0 - timer, 1 - sensors OR +1sec, 2 - sensors AND +1sec, 14 - disabled)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>368</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>AdjustFrequency</FldName>
+			<FldDesc>Carrier frequency correction in ppb.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>376</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>AdjustRSSI</FldName>
+			<FldDesc>RSSI correction in dbm.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>392</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>string</FldType>
+			<FldName>AllowedCallSign1</FldName>
+			<FldDesc>Radio callsign of the additional ground control transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>400</FldOffset>
+			<FldLen>56</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>string</FldType>
+			<FldName>AllowedCallSign2</FldName>
+			<FldDesc>Radio callsign of the additional ground control transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>456</FldOffset>
+			<FldLen>56</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>XYmodemRXTimeout</FldName>
+			<FldDesc>Timeout when a file is received by the X - or Y-modem, ms</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>512</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>XYmodemTXTimeout</FldName>
+			<FldDesc>Timeout when transferring a file by an X- or Y-modem, ms</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>544</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>XYModemTXEnable1kBlocks</FldName>
+			<FldDesc>Allow the Y-modem to use kilobyte blocks in transmission</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>576</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>16897</PacId>
+		<PacName>get_AllConfiguration</PacName>
+		<PacDesc>UHF configuration.
+Full current UHF configuration</PacDesc>
+		<DataLen>73</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Magic</FldName>
+			<FldDesc>Technology field, always 0x12345679.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Frequency</FldName>
+			<FldDesc>Frequency, Hz</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>BitRate</FldName>
+			<FldDesc>Bitrate, baud (typical values: 4800, 9600, 19200)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>64</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>DAC1Setting</FldName>
+			<FldDesc>DAC1 calibration value.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>96</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>DAC2Setting</FldName>
+			<FldDesc>DAC2 calibration value.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>112</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>PacketMode</FldName>
+			<FldDesc>Packet mode (0 - USP, 1 - AX.25)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>128</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>EnableBeacon</FldName>
+			<FldDesc>Activation of automatic beacon transmission (1 - active)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>136</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>BeaconInterval</FldName>
+			<FldDesc>Beacon interval, s.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>144</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>string</FldType>
+			<FldName>CallSign</FldName>
+			<FldDesc>Radio callsign of onboard transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>160</FldOffset>
+			<FldLen>56</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>SSID</FldName>
+			<FldDesc>Unique number of the onboard transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>216</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>string</FldType>
+			<FldName>EarthCallSign</FldName>
+			<FldDesc>Radio callsign of the ground control transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>224</FldOffset>
+			<FldLen>56</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>EarthSSID</FldName>
+			<FldDesc>Unique number of the ground transmitter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>280</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Location</FldName>
+			<FldDesc>Operating mode (0-onboard, 1-ground)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>288</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>UNIcanID</FldName>
+			<FldDesc>UniCAN device's own address</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>296</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>EnableBridge</FldName>
+			<FldDesc>Activate bridge mode with onboard network</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>312</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>BeaconStartupDelay</FldName>
+			<FldDesc>Set Beacon startup delay</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>320</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>DeployStartupDelay</FldName>
+			<FldDesc>Antenna deployment system activation timer.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>336</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>DeployBurnTime</FldName>
+			<FldDesc>Antenna deployment system shutdown timer, s</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>352</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>DeployMode</FldName>
+			<FldDesc>Antenna deployment system mode(0 - timer, 1 - sensors OR +1sec, 2 - sensors AND +1sec, 14 - disabled)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>368</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>AdjustFrequency</FldName>
+			<FldDesc>Carrier frequency correction in ppb.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>376</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>AdjustRSSI</FldName>
+			<FldDesc>RSSI correction in dbm.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>392</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>string</FldType>
+			<FldName>AllowedCallSign1</FldName>
+			<FldDesc>Radio callsign of the additional ground control transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>400</FldOffset>
+			<FldLen>56</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>string</FldType>
+			<FldName>AllowedCallSign2</FldName>
+			<FldDesc>Radio callsign of the additional ground control transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>456</FldOffset>
+			<FldLen>56</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>XYmodemRXTimeout</FldName>
+			<FldDesc>Timeout when a file is received by the X - or Y-modem, ms</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>512</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>XYmodemTXTimeout</FldName>
+			<FldDesc>Timeout when transferring a file by an X- or Y-modem, ms</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>544</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>XYModemTXEnable1kBlocks</FldName>
+			<FldDesc>Allow the Y-modem to use kilobyte blocks in transmission</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>576</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16898</PacId>
+		<PacName>request_AllConfiguration</PacName>
+		<PacDesc>The configuration request.</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16899</PacId>
+		<PacName>set_Frequency</PacName>
+		<PacDesc>Set carrier frequency.</PacDesc>
+		<DataLen>4</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Frequency</FldName>
+			<FldDesc>Frequency, Hz</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16900</PacId>
+		<PacName>set_BitRate</PacName>
+		<PacDesc>Set bitrate.</PacDesc>
+		<DataLen>4</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>BitRate</FldName>
+			<FldDesc>Bitrate, baud (typical values: 4800, 9600, 19200)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16901</PacId>
+		<PacName>set_PacketMode</PacName>
+		<PacDesc>Set PacketMode.
+Configures the radio exchange protocol: 0 - USP, 1 - AX.25 (default)</PacDesc>
+		<DataLen>1</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>PacketMode</FldName>
+			<FldDesc>Packet mode (0 - USP, 1 - AX.25)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16902</PacId>
+		<PacName>set_Location</PacName>
+		<PacDesc>Set the operating mode.
+Configures the packet router for different transceiver locations: 0 - onboard, 1 - ground</PacDesc>
+		<DataLen>1</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Location</FldName>
+			<FldDesc>Operating mode (0-onboard, 1-ground)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16903</PacId>
+		<PacName>set_DAC1Setting</PacName>
+		<PacDesc>Set DAC1 calibration. Set the preamp power amplifier calibration value.
+ATTENTION! This command is technological, its use without control of all transmitted parameters threatens the loss of the SC!</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>DAC1Setting</FldName>
+			<FldDesc>DAC1 calibration value.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16904</PacId>
+		<PacName>set_DAC2Setting</PacName>
+		<PacDesc>Set DAC2 calibration. Set the preamp power amplifier calibration value.
+ATTENTION! This command is technological, its use without control of all transmitted parameters threatens the loss of the SC!</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>DAC2Setting</FldName>
+			<FldDesc>DAC2 calibration value.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16905</PacId>
+		<PacName>set_BeaconInterval</PacName>
+		<PacDesc>Set beacon interval.
+Sets the period of broadcasting the beacon with the current field values. Data for beacon fields are collected passively starting from the transceiver software download and are updated upon arrival of telemetry from the spacecraft onboard bus devices</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>BeaconInterval</FldName>
+			<FldDesc>Beacon interval, s.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16906</PacId>
+		<PacName>set_UNIcanID</PacName>
+		<PacDesc>Set UniCAN ID.
+Changes the current address of the device on the UniCAN bus without saving it to non-volatile memory. ATTENTION! This command should be reported with care. Range of valid addresses for the on-board unit: 2-31, the default UHF transceiver address is 0x2</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>UNIcanID</FldName>
+			<FldDesc>UniCAN device's own address</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16907</PacId>
+		<PacName>set_SSID</PacName>
+		<PacDesc>Set SSID.
+Sets a unique transmitter SSID number ATTENTION! This command is set by the manufacturer</PacDesc>
+		<DataLen>1</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>SSID</FldName>
+			<FldDesc>Unique number of the onboard transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16908</PacId>
+		<PacName>set_EarthSSID</PacName>
+		<PacDesc>Set the ground SSID.
+Sets the unique number of the ground-based FCC transceiver. When receiving commands, it is not checked. ATTENTION! This command is set by the manufacturer</PacDesc>
+		<DataLen>1</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>EarthSSID</FldName>
+			<FldDesc>Unique number of the ground transmitter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16909</PacId>
+		<PacName>set_CallSign</PacName>
+		<PacDesc>Set the CallSign.
+Sets the unique radio call sign of the onboard transmitter of the ground FCC. All outgoing transmissions will be carried out with this call sign. ATTENTION! This command is set by the manufacturer. The call sign is regulated international agreement. Its setting must be approved by the regulatory authority</PacDesc>
+		<DataLen>7</DataLen>
+		<Field>
+			<FldType>string</FldType>
+			<FldName>CallSign</FldName>
+			<FldDesc>Radio callsign of onboard transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>56</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16910</PacId>
+		<PacName>set_EarthCallSign</PacName>
+		<PacDesc>Set EarthCallSign.
+Sets the unique number of the ground-based FCC transmitter. When receiving commands, the following commands will be executed: only those that came from this station. ATTENTION! This command is set by the manufacturer.</PacDesc>
+		<DataLen>7</DataLen>
+		<Field>
+			<FldType>string</FldType>
+			<FldName>EarthCallSign</FldName>
+			<FldDesc>Radio callsign of the ground control transmitter</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>56</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16911</PacId>
+		<PacName>set_EnableBridge</PacName>
+		<PacDesc>Activate the bridge mode.
+Sets the mode of operation of the packet router from the radio channel to the on-Board bus: 0 - packet forwarding is prohibited, 1 - packets are being forwarded. ATTENTION! This command is set by the manufacturer.</PacDesc>
+		<DataLen>1</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>EnableBridge</FldName>
+			<FldDesc>Activate bridge mode with onboard network</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16912</PacId>
+		<PacName>set_SaveConfiguration</PacName>
+		<PacDesc>Save settings to ROM.
+Save all current settings to the nonvolatile memory of the transceiver ATTENTION! The command can lead to the loss of the SC! Check that the current settings are correct with the command request_All Configuration and make sure that stable communication with the SC is possible. Saved settings will work after each next reboot</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16913</PacId>
+		<PacName>tc_uhf_reset_in</PacName>
+		<PacDesc>Reset by timer.
+Reset the transceiver after the specified time in seconds. For immediate reboot parameter 0 is passed. ATTENTION! Communication will be unavailable for a few seconds after reboot</PacDesc>
+		<DataLen>4</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16914</PacId>
+		<PacName>tc_uhf_cancel_reset</PacName>
+		<PacDesc>Cancel reset timer.
+Set the restart timer with a value equal to 5 days. The same timer is used as in the command Reset</PacDesc>
+		<DataLen>4</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16915</PacId>
+		<PacName>set_Time</PacName>
+		<PacDesc>Set time.
+Sets the current onboard time, using the Unixtime-32 format. ATTENTION! Onboard time in UTC format. Setting an incorrect time can lead to unpredictable behavior of the SC</PacDesc>
+		<DataLen>4</DataLen>
+		<Field>
+			<FldType>time_t</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16916</PacId>
+		<PacName>set_request_TelemetryUHF</PacName>
+		<PacDesc>UHF telemetry request.</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16917</PacId>
+		<PacName>set_request_Beacon</PacName>
+		<PacDesc>UHF beacon request.</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>16918</PacId>
+		<PacName>beacon</PacName>
+		<PacDesc>Beacon.
+The main packet of the periodic beacon, the period is set by the set_BeaconInterval command. Send with extendedBeacon packet. Beacon transmission is activated automatically after loading the transceiver, after expiration of the BeaconDelay timer and subject subject to the permission of the beacon BeaconEnable. Beacon data data is collected in passive mode as telemetry is received from onboard devices</PacDesc>
+		<DataLen>66</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Usb1</FldName>
+			<FldDesc>Solar Panel 1 Voltage(mV)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Usb2</FldName>
+			<FldDesc>Solar Panel 2 Voltage(mV)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>16</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Usb3</FldName>
+			<FldDesc>Solar Panel 3 Voltage(mV)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Isb1</FldName>
+			<FldDesc>Solar Panel 1 Current(mA)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>48</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Isb2</FldName>
+			<FldDesc>Solar Panel 2 Current(mA)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>64</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Isb3</FldName>
+			<FldDesc>Solar Panel 3 Current(mA)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>80</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>Iab</FldName>
+			<FldDesc>Battery Current(mA)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>96</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Ich1</FldName>
+			<FldDesc>Channel 1 Current(mA)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>112</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Ich2</FldName>
+			<FldDesc>Channel 2 Current(mA)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>128</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Ich3</FldName>
+			<FldDesc>Channel 3 Current(mA)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>144</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Ich4</FldName>
+			<FldDesc>Channel 4 Current(mA)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>160</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>t1_pw</FldName>
+			<FldDesc>Battery temperature 1(deg. С)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>176</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>t2_pw</FldName>
+			<FldDesc>Battery temperature 2(deg. С)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>192</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>t3_pw</FldName>
+			<FldDesc>Battery temperature 3(deg. С)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>208</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>t4_pw</FldName>
+			<FldDesc>Battery temperature 4(deg. С)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>224</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>Uab_crit</FldName>
+			<FldDesc>Flag "Critical battery voltage".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>240</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>Uab_min</FldName>
+			<FldDesc>Flag "Minimal battery voltage".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>241</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>heater2_manual</FldName>
+			<FldDesc>Flag "Heater 2 manual control".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>242</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>heater1_manual</FldName>
+			<FldDesc>Flag "Heater 1 manual control".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>243</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>heater2_on</FldName>
+			<FldDesc>Flag "Heater 2 is on".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>244</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>heater1_on</FldName>
+			<FldDesc>Flag "Heater 1 is on".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>245</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>Tab_max</FldName>
+			<FldDesc>Flag "Battery overtemperature".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>246</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>Tab_min</FldName>
+			<FldDesc>Flag "Battery undertemperature".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>247</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>channelon4</FldName>
+			<FldDesc>Flag "Channel 4 is on".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>248</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>channelon3</FldName>
+			<FldDesc>Flag "Channel 3 is on".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>249</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>channelon2</FldName>
+			<FldDesc>Flag "Channel 2 is on".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>250</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>channelon1</FldName>
+			<FldDesc>Flag "Channel 1 is on".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>251</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>Ich_limit4</FldName>
+			<FldDesc>Flag "Channel 4 current limit".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>252</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>Ich_limit3</FldName>
+			<FldDesc>Flag "Channel 3 current limit".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>253</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>Ich_limit2</FldName>
+			<FldDesc>Flag "Channel 2 current limit".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>254</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>Ich_limit1</FldName>
+			<FldDesc>Flag "Channel 1 current limit".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>255</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>reserved0</FldName>
+			<FldDesc>Reserved.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>256</FldOffset>
+			<FldLen>7</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>charger</FldName>
+			<FldDesc>Flag "Charging voltage".</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>263</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>reserved1</FldName>
+			<FldDesc>Reserved.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>264</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>Uab</FldName>
+			<FldDesc>Battery voltage(mV)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>272</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>reg_tel_id</FldName>
+			<FldDesc>PSS telemetry number.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>288</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>time_t</FldType>
+			<FldName>Time</FldName>
+			<FldDesc>PSS last telemetry timestamp.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>320</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>ps_reset_counter</FldName>
+			<FldDesc>PSS reset counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>352</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>FL</FldName>
+			<FldDesc>PS flags.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>360</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>t_amp</FldName>
+			<FldDesc>UHF amp temperature(deg. С)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>368</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>t_uhf</FldName>
+			<FldDesc>UHF temperature(deg. С)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>376</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>RSSIrx</FldName>
+			<FldDesc>RX RSSI.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>384</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>RSSIidle</FldName>
+			<FldDesc>idle RSSI</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>392</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>Pf</FldName>
+			<FldDesc>Forward wave power(dBm)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>400</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>Pb</FldName>
+			<FldDesc>Reflected wave power(dBm)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>408</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>uhf_reset_counter</FldName>
+			<FldDesc>UHF reset counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>416</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>FL</FldName>
+			<FldDesc>Solar UHF flags.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>424</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>time_t</FldType>
+			<FldName>Time</FldName>
+			<FldDesc>UHF telemetry timestamp.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>432</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>UpTime</FldName>
+			<FldDesc>Uptime(sec)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>464</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Current</FldName>
+			<FldDesc>UHF consumption current.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>496</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>Uuhf</FldName>
+			<FldDesc>UHF voltage(mV)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>512</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>16919</PacId>
+		<PacName>extendedBeacon</PacName>
+		<PacDesc>Extended beacon.
+Extended packet of periodic beacon, transmitted automatically after the main Beacon packet Beacon transmission is activated automatically after loading the transceiver, after expiration of the BeaconDelay timer and subject subject to the permission of the beacon BeaconEnable. Beacon data data is collected in passive mode as telemetry is received from onboard devices</PacDesc>
+		<DataLen>81</DataLen>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>t_mb</FldName>
+			<FldDesc>Carrier board temperature (deg. С)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>float</FldType>
+			<FldName>Mx</FldName>
+			<FldDesc>Magnetic field X(nanotesla)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>16</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>float</FldType>
+			<FldName>My</FldName>
+			<FldDesc>Magnetic field Y(nanotesla)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>48</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>float</FldType>
+			<FldName>Mz</FldName>
+			<FldDesc>Magnetic field Z(nanotesla)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>80</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>float</FldType>
+			<FldName>Vx</FldName>
+			<FldDesc>Angular velocity X(dps)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>112</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>float</FldType>
+			<FldName>Vy</FldName>
+			<FldDesc>Angular velocity Y(dps)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>144</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>float</FldType>
+			<FldName>Vz</FldName>
+			<FldDesc>Angular velocity Z(dps)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>176</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>carrier_reset_counter</FldName>
+			<FldDesc>Carrier board reset counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>208</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Rcon</FldName>
+			<FldDesc>Last carrier board reset reason.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>216</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>carrier_flags</FldName>
+			<FldDesc>Carrier board flags.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>224</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>time_t</FldType>
+			<FldName>Time</FldName>
+			<FldDesc>Last telemetry timestamp.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>232</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>payload_flags</FldName>
+			<FldDesc>Payload flags.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>264</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>time_t</FldType>
+			<FldName>TimeSend</FldName>
+			<FldDesc>Last payload telemetry timestamp.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>272</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>T_Plate</FldName>
+			<FldDesc>Payload board temperature.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>304</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>T_CPU</FldName>
+			<FldDesc>Payload MCU temperature.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>320</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>CurSens1</FldName>
+			<FldDesc>Payload current sensor 1.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>336</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>CurSens2</FldName>
+			<FldDesc>Payload current sensor 2.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>352</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>payload_reset_counter</FldName>
+			<FldDesc>Payload reset counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>368</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>time_t</FldType>
+			<FldName>TimeRst</FldName>
+			<FldDesc>Payload last reset timestamp.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>376</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>CH1Rate</FldName>
+			<FldDesc>Channel 1 count rate.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>408</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>CH2Rate</FldName>
+			<FldDesc>Channel 2 count rate.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>424</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>CH3Rate</FldName>
+			<FldDesc>Channel 3 count rate.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>440</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>CH4Rate</FldName>
+			<FldDesc>Channel 4 count rate.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>456</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>CH5Rate</FldName>
+			<FldDesc>Channel 5 count rate.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>472</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>CH6Rate</FldName>
+			<FldDesc>Channel 6 count rate.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>488</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>PtrEnd1</FldName>
+			<FldDesc>Last transmitted buffer from segment 1 pointer.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>504</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>PtrCrt1</FldName>
+			<FldDesc>Write pointer from segment 1.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>520</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>PtrEnd2</FldName>
+			<FldDesc>Last transmitted buffer from segment 2 pointer.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>536</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>PtrCrt2</FldName>
+			<FldDesc>Write pointer from segment 2.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>552</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>PtrEnd3</FldName>
+			<FldDesc>Last transmitted buffer from segment 3 pointer.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>568</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>PtrCrt3</FldName>
+			<FldDesc>Write pointer from segment 3.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>584</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>LastEvent_CH1_1</FldName>
+			<FldDesc>Last event channel 1 M1L1.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>600</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>LastEvent_CH1_2</FldName>
+			<FldDesc>Last event channel 1 L2H1.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>608</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>LastEvent_CH1_3</FldName>
+			<FldDesc>Last event channel 1 H2M2.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>616</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>LastEvent_CH2_1</FldName>
+			<FldDesc>Last event channel 2 M1L1.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>624</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>LastEvent_CH2_2</FldName>
+			<FldDesc>Last event channel 2 L2H1.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>632</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>LastEvent_CH2_3</FldName>
+			<FldDesc>Last event channel 2 H2M2.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>640</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16920</PacId>
+		<PacName>set_BeaconStartupDelay</PacName>
+		<PacDesc>Set Beacon startup delay.
+Sets the time interval for prohibiting automatic transmission of the beacon. The ban is performed once each time the transceiver is turned on and restarted, after the specified time, automatic transmission is allowed</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>BeaconStartupDelay</FldName>
+			<FldDesc>Set Beacon startup delay</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16921</PacId>
+		<PacName>set_BeaconDelay</PacName>
+		<PacDesc>Set current beacon delay.
+Set the current countdown timer to disable automatic beacon transmission. Can be used to extend or reset the base interval set by BeaconStartupDelay parameter. Used by PSS when connecting an external charger</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16922</PacId>
+		<PacName>request_Time</PacName>
+		<PacDesc>Request for onboard time.
+Time in Unixtime-32 format</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16923</PacId>
+		<PacName>set_DeployStart</PacName>
+		<PacDesc>Set a deployment activation timer.
+Set the activation delay for the antenna deployment system after power is applied</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>DeployStartupDelay</FldName>
+			<FldDesc>Antenna deployment system activation timer.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16924</PacId>
+		<PacName>set_DeployStop</PacName>
+		<PacDesc>Set a timer to disable deploymen.
+Set the timer for disable the antenna deployment system</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>DeployBurnTime</FldName>
+			<FldDesc>Antenna deployment system shutdown timer, s</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16925</PacId>
+		<PacName>request_DeployState</PacName>
+		<PacDesc>Request the status of the antenna deployment system.
+In response, a packet is sent with the current state of the antenna deployment system</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>16926</PacId>
+		<PacName>deployState</PacName>
+		<PacDesc>Status of the antenna deployment system.
+Current state of the antenna deployment system</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>reserv</FldName>
+			<FldDesc>Зарезервированный</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>4</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>depl_sens2_latch</FldName>
+			<FldDesc>Latched state of Sensor 2 (0 - open, 1 - act)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>4</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>depl_sens2</FldName>
+			<FldDesc>Current state of Sensor 2 (0 - open, 1 - act)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>5</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>depl_sens1_latch</FldName>
+			<FldDesc>Latched state of Sensor 1 (0 - open, 1 - act)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>6</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>depl_sens1</FldName>
+			<FldDesc>Current state of Sensor 1 (0 - open, 1 - act)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>7</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>depl_state</FldName>
+			<FldDesc>Deployment state(0 - init, 1 - wait for start, 2 - starting, 3 and 4 - in progress, 5 - stop, 15 - done)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>8</FldOffset>
+			<FldLen>4</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>depl_mode</FldName>
+			<FldDesc>Deployment mode (0 - timer, 1 - sensors OR +1sec, 2 - sensors AND +1sec, 14 - disabled)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>12</FldOffset>
+			<FldLen>4</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16927</PacId>
+		<PacName>set_DeployMode</PacName>
+		<PacDesc>Set the mode of the antenna deployment system.
+Deployment mode (0 - timer, 1 - sensors OR +1sec, 2 - sensors AND +1sec, 14 - disabled)</PacDesc>
+		<DataLen>1</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>DeployMode</FldName>
+			<FldDesc>Antenna deployment system mode(0 - timer, 1 - sensors OR +1sec, 2 - sensors AND +1sec, 14 - disabled)</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16928</PacId>
+		<PacName>set_SpectrumMonitoringConfiguration</PacName>
+		<PacDesc>Set spectrum monitoring settings.
+Sets all configuration of the spectrum monitoring experiment with one command</PacDesc>
+		<DataLen>34</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>StartFrequency</FldName>
+			<FldDesc>Start frequency of the monitoring area, Hz.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Step</FldName>
+			<FldDesc>Adjustment step during monitoring, Hz.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>Bandwidth</FldName>
+			<FldDesc>Monitoring bandwidth, Hz.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>64</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>NSteps</FldName>
+			<FldDesc>Number of monitoring steps.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>96</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>StepTime</FldName>
+			<FldDesc>Time of one step, ms.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>128</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>time_t</FldType>
+			<FldName>StartTime</FldName>
+			<FldDesc>Monitoring start time, UTC.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>160</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>time_t</FldType>
+			<FldName>StopTime</FldName>
+			<FldDesc>End time of monitoring, UTC.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>192</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>MonitoringInterval</FldName>
+			<FldDesc>Interval between monitoring sessions, s.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>224</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>MaxFileSize</FldName>
+			<FldDesc>Maximum file size, bytes.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>240</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16929</PacId>
+		<PacName>set_SpectrumMonitoringStart</PacName>
+		<PacDesc>Start spectrum monitoring.
+Starts spectrum monitoring (including deferred monitoring if the start time is non-zero in the settings)</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16930</PacId>
+		<PacName>set_SpectrumMonitoringStop</PacName>
+		<PacDesc>Stop spectrum monitoring.</PacDesc>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>16931</PacId>
+		<PacName>TelemetryUHF</PacName>
+		<PacDesc>UHF telemetry.</PacDesc>
+		<DataLen>96</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>ClearTimer</FldName>
+			<FldDesc>Time from last counters reset.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>64</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>RF_AX25_RX_Packets</FldName>
+			<FldDesc>AX.25 received packets counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>64</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>RF_USP_RX_Packets</FldName>
+			<FldDesc>AX.25 received packets counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>96</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>AX25_Overflow</FldName>
+			<FldDesc>AX.25 overflows counters.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>128</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>RF_RX_Packets</FldName>
+			<FldDesc>RF interface packets RX counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>160</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>Can_RX_Packets</FldName>
+			<FldDesc>CAN interface packets RX counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>192</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>RF_TX_Packets</FldName>
+			<FldDesc>RF interface packets TX counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>224</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>Can_TX_Packets</FldName>
+			<FldDesc>CAN interface packets TX counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>256</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>Drop_Packets</FldName>
+			<FldDesc>Dropped packets counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>288</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>RX_Hangups</FldName>
+			<FldDesc>RX state machine hangups internal counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>320</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>TX_Hangups</FldName>
+			<FldDesc>TX state machine hangups internal counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>352</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>RX_FIFO_Overflows</FldName>
+			<FldDesc>RX FIFO overflows internal counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>384</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>TX_FIFO_Underflows</FldName>
+			<FldDesc>TX FIFO underflows internal counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>416</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>TxLoad</FldName>
+			<FldDesc>RF interface TX load in percents.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>448</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>TotalViterbiBits</FldName>
+			<FldDesc>Number of bits received at viterbi decoder input.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>480</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>ViterbiBitErrors</FldName>
+			<FldDesc>Number of errors fixed by viterbi decoder.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>512</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>float</FldType>
+			<FldName>ViterbiBER</FldName>
+			<FldDesc>Channel BER, based on number of errors fixed by viterbi decoder.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>544</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>RSByteErrors</FldName>
+			<FldDesc>Number of byte errors fixed by RS-decoder.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>576</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>InvalidPLS</FldName>
+			<FldDesc>Number of incorrect PLS codes received.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>608</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>FailedRSDecoding</FldName>
+			<FldDesc>Number of packets, RS-decoder failed to decode.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>640</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>FalsePreSyncs</FldName>
+			<FldDesc>Number of packets, RS-decoder failed to decode.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>672</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>I2CResets</FldName>
+			<FldDesc>I2C bus resets (due bus errors) counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>704</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>DebugCounter</FldName>
+			<FldDesc>Generic debug counter.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>736</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16932</PacId>
+		<PacName>set_AllowedCallsign</PacName>
+		<PacDesc>Set one of the callsigns from which control is allowed.</PacDesc>
+		<DataLen>8</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>CallsignIndex</FldName>
+			<FldDesc>Callsign index, we are going to change.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>string</FldType>
+			<FldName>CallSign</FldName>
+			<FldDesc>Station callsign, allowed to control.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>8</FldOffset>
+			<FldLen>56</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16933</PacId>
+		<PacName>set_XYModemSettings</PacName>
+		<PacDesc>Set X- and Y-modem settings.</PacDesc>
+		<DataLen>9</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>XYmodemRXTimeout</FldName>
+			<FldDesc>X and Y-modem TX timeout in milliseconds.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>XYmodemTXTimeout</FldName>
+			<FldDesc>X and Y-modem RX timeout in milliseconds.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>XYModemTXEnable1kBlocks</FldName>
+			<FldDesc>Enable 1K-blocks usage for X and Y-modem transmissions.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>64</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>16944</PacId>
+		<PacName>tc_cmdschedule_load_from_file</PacName>
+		<PacDesc>Load command schedule from file.</PacDesc>
+		<DataLen>0</DataLen>
+		<Field>
+			<FldType>string</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>0</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>65520</PacId>
+		<PacName>set_telnet_downstream</PacName>
+		<PacDesc>Telnet transfer interface.
+Technology command</PacDesc>
+		<DataLen>1</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>65521</PacId>
+		<PacName>telnet_upstream</PacName>
+		<PacDesc>Telnet receive interface.
+Technology command</PacDesc>
+		<DataLen>1</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>43536</PacId>
+		<PacName>fwupdate_fwupload</PacName>
+		<PacDesc>Software update.
+Technology command ATTENTION! This command is intended for use with the technological software for updating the firmware, its incorrect use threatens the loss of the spacecraft</PacDesc>
+		<DataLen>22</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>addr</FldName>
+			<FldDesc>Address of the new firmware placement.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>crc32</FldName>
+			<FldDesc>CRC32 checksum.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>size</FldName>
+			<FldDesc>The size of the new firmware.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>64</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>unican_addr</FldName>
+			<FldDesc>UniCAN device's own address.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>96</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>mem_addr_local</FldName>
+			<FldDesc>Local address in device memory in bytes.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>112</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>buf_size</FldName>
+			<FldDesc>The size of the recorded buffer, bytes.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>144</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>timeout</FldName>
+			<FldDesc>Timeout of attempts to write a buffer to memory.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>160</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>43544</PacId>
+		<PacName>fwupdate_fwupload_report</PacName>
+		<PacDesc>Software update report.
+Report on the results of the firmware update using the fwupdate_fwupload command ATTENTION! This command is intended for use with the technological software for updating the firmware</PacDesc>
+		<DataLen>11</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>stage</FldName>
+			<FldDesc>Stage code.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>offset_cur</FldName>
+			<FldDesc>Offset, bytes.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>8</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>err_cur</FldName>
+			<FldDesc>Error code.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>40</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>time_elapsed</FldName>
+			<FldDesc>Elapsed time.</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>56</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<MemoryBlock>
+		<MemName>FLASH_BASE</MemName>
+		<MemDesc>MCU flash memory</MemDesc>
+		<MemAddr>0x08000000</MemAddr>
+		<MemSize>0x100000</MemSize>
+	</MemoryBlock>
+	<MemoryBlock>
+		<MemName>FW_MAIN</MemName>
+		<MemDesc>Main firmware application</MemDesc>
+		<MemAddr>0x08010000</MemAddr>
+		<MemSize>0x70000</MemSize>
+	</MemoryBlock>
+	<MemoryBlock>
+		<MemName>FW_UPDATE_MEM</MemName>
+		<MemDesc>New firmware version instance</MemDesc>
+		<MemAddr>0x08080000</MemAddr>
+		<MemSize>0x80000</MemSize>
+	</MemoryBlock>
+	<MemoryAccess>
+		<EnterMemModeCmd>0x11F1</EnterMemModeCmd>
+		<ExitMemModeCmd>0x11F1</ExitMemModeCmd>
+		<WriteMemCmd>0xAB01</WriteMemCmd>
+		<WriteMemAddrFld>addr</WriteMemAddrFld>
+		<WriteMemSizeFld>size</WriteMemSizeFld>
+		<WriteMemDataFld>data</WriteMemDataFld>
+		<WriteMemBlockSz>240</WriteMemBlockSz>
+		<WriteMemPause>1000</WriteMemPause>
+		<FWUpdateCmd>0xAA00</FWUpdateCmd>
+		<FWUpdAddrFld>addr</FWUpdAddrFld>
+		<FWUpdSizeFld>size</FWUpdSizeFld>
+		<FWUpdCrc32Fld>crc32</FWUpdCrc32Fld>
+		<DefaultWriteMem>FW_UPDATE_MEM</DefaultWriteMem>
+	</MemoryAccess>
+</Device>

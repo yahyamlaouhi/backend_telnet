@@ -1,0 +1,33 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'media/style.css' %}">
+<body id="bg" style="background-image: url('{% static 'media/st1.jpg' %}'); background-repeat: no-repeat;background-visibility: 50%;background-size: 100%;" a link="white" vlink="white">
+<div class="Cpage">
+<form method="POST" class="box">
+    {% csrf_token %}
+<table border="0">
+    <tr>
+        <td>
+            Email
+        </td>
+        <td><input type="Email" placeholder="Votre Email.." name="Email" required></td>
+    </tr>
+    <tr>
+        <td>
+            Mot de passe
+        </td>
+        <td><input type="password" placeholder="Votre Mot de passe" name="pass1" required></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button type="submit">S'identifier</button></td>
+    </tr>
+</table>
+{% if messages %}
+{% for msg in messages %}
+<b>{{msg}}</b>
+{% endfor %}
+{% endif %}
+<em><a href="{% url 'index2' %}">Page d'acceuil</a></em>
+</form>
+</div>
+</body>

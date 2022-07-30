@@ -1,0 +1,164 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'media/style.css' %}">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'acceuil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color: rgb(2, 2, 2);">
+
+
+
+  <nav class="navbar navbar-light" style="background-image: url('{% static 'media/st22.jpg' %}'); background-height: 50%;">
+      <nav class="navbar navbar-expand-lg">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color: #2574A9;">
+            <ul class="navbar-nav mr-auto">
+                  <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+
+                <li>
+                  <h5>{{request.session.Email}}</h5> &nbsp;&nbsp; <a href="{% url 'Dec' %}">Deconnexion</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </nav>
+
+
+
+      <form action="{% url 'dash' %}" method="POST" enctype="multipart/form-data">
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        <input type="file" multiple name="uploadfiles" >
+        {% csrf_token %}
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        <button type="submit" class="btn btn-outline-primary">Importer</button>
+    </form>
+
+      {% for d in data %}
+      
+    <p><file src="{{d.myfile.url}}"></p>
+      
+      {% endfor %}
+
+
+      <style>
+        
+        tr { display: block; float: left; }
+        td { display: block;
+          width: 100px;
+          white-space: nowrap;
+          overflow: hidden !important;
+        }
+        .cadre-table-scroll {
+          align-items: center;
+          display: inline-block;
+          height: 30em;
+          width: 70em;
+          overflow-x: scroll;
+        }
+        .table-scroll thead th {
+          position: sticky;
+        }
+        .table-scroll tfoot td {
+          position: sticky;
+        }
+        .table{
+          width: auto;
+        }
+
+      </style>
+
+
+    <div class="container display-center ">
+     <h5 class="text-light"></h5>          
+      <table class="table">
+      
+        <tbody>
+          <!-- <form action="{% url 'rapport' %}" method="GET" enctype="multipart/form-data"> -->
+
+          <tr>
+            <td>Manage</td>
+              {% for key1,value in newElement.items %}
+                <!-- {% csrf_token %} -->
+                <!-- <form action="{% url 'rapport' %}" method="POST" enctype="multipart/form-data"> -->
+                  <!-- {% csrf_token %} -->
+                  <td><button type="submit" type="button" class="btn btn-primary" value="{{value}}" onclick="manage(value)" style="height:22.869px">Manage</button>
+                  </td>
+                    {% endfor %}
+                    {% for key1,value in data.items %}
+                      <tr class="table-row">
+                      <td>{{key1}}</td>
+                      {% for key2,val in value.items %}
+                        <td>  {{val}}</td>
+                      {% endfor %}
+                    {% endfor %}
+                      </tr>
+                </form>
+          </form>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="content-container">
+    
+      <div class="container-fluid">
+  
+      </div>
+    </div>
+    <script>
+  
+      function manage(value){
+        $.ajax({
+
+      // action : "{% url 'rapport' %}",
+      type: "POST",
+      url : "rapport",
+      // path : ajax.url,
+      data: {csrfmiddlewaretoken: '{{ csrf_token }}', data : value  },
+      
+    });
+    alert("success")
+    // window.location = "{% url 'rapport' %}"
+    // data : value 
+  };
+  
+    </script>
+</body>

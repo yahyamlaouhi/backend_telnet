@@ -1,0 +1,9 @@
+{% autoescape off %}
+
+Bienvenue sur Telnet - Reporting Connexion!!
+ Bienvenue {{ name }}!!
+ Veuillez confirmer votre email en cliquant sur le lien suivant.
+
+ Lien de validation: http://{{ domain }}{% url 'activate' uidb64=uid token=token %} 
+
+ {% endautoescape %}

@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Device xmlns="unican_device_schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="unican_device_schema unican_device_schema.xsd">
+	<DevModel>MTCU_msgid</DevModel>
+	<DevDesc>MTCU_msgid</DevDesc>
+	
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>280</PacId>
+		<PacName>ACK</PacName>
+		<PacDesc>Acknowledge</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>281</PacId>
+		<PacName>NACK</PacName>
+		<PacDesc>Command error</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>value</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>13</PacId>
+		<PacName>set_pwm</PacName>
+		<PacDesc>Set PWM for every axis</PacDesc>
+		<DataLen>6</DataLen>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>x</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>y</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>16</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>z</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>14</PacId>
+		<PacName>regular_common</PacName>
+		<PacDesc>Telemetry for currents and voltages</PacDesc>
+		<DataLen>5</DataLen>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>current</FldName>
+			<FldDesc>Current, mA</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>voltage</FldName>
+			<FldDesc>Voltage, mA</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>16</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>voltage_invalid</FldName>
+			<FldDesc>Voltage not valid</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>38</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>current_invalid</FldName>
+			<FldDesc>Current not valid</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>39</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>15</PacId>
+		<PacName>regular_x</PacName>
+		<PacDesc>Telemetry for currents and voltages, X axis</PacDesc>
+		<DataLen>5</DataLen>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>current</FldName>
+			<FldDesc>Current, mA</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>voltage</FldName>
+			<FldDesc>Voltage, mA</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>16</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>voltage_invalid</FldName>
+			<FldDesc>Voltage not valid</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>38</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>current_invalid</FldName>
+			<FldDesc>Current not valid</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>39</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>16</PacId>
+		<PacName>regular_y</PacName>
+		<PacDesc>Telemetry for currents and voltages, Y axis</PacDesc>
+		<DataLen>5</DataLen>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>current</FldName>
+			<FldDesc>Current, mA</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>voltage</FldName>
+			<FldDesc>Voltage, mA</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>16</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>voltage_invalid</FldName>
+			<FldDesc>Voltage not valid</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>38</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>current_invalid</FldName>
+			<FldDesc>Current not valid</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>39</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>17</PacId>
+		<PacName>regular_z</PacName>
+		<PacDesc>Telemetry for currents and voltages, Z axis</PacDesc>
+		<DataLen>5</DataLen>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>current</FldName>
+			<FldDesc>Current, mA</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>voltage</FldName>
+			<FldDesc>Voltage, mA</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>16</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>voltage_invalid</FldName>
+			<FldDesc>Voltage not valid</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>38</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>current_invalid</FldName>
+			<FldDesc>Current not valid</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>39</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>datain</PacType>
+		<PacId>1088</PacId>
+		<PacName>regular_temperature</PacName>
+		<PacDesc>Telemetry for temperature</PacDesc>
+		<DataLen>2</DataLen>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>temperature0</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>int</FldType>
+			<FldName>temperature1</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>8</FldOffset>
+			<FldLen>8</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>temperature1_invalid</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>22</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+		<Field>
+			<FldType>bit</FldType>
+			<FldName>temperature0_invalid</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>23</FldOffset>
+			<FldLen>1</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>NO</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>1104</PacId>
+		<PacName>set_pwm_x</PacName>
+		<PacDesc>Set PWM for X axis</PacDesc>
+		<DataLen>6</DataLen>
+		<Field>
+			<FldType>float</FldType>
+			<FldName>torque</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>time</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>1105</PacId>
+		<PacName>set_pwm_y</PacName>
+		<PacDesc>Set PWM for Y axis</PacDesc>
+		<DataLen>6</DataLen>
+		<Field>
+			<FldType>float</FldType>
+			<FldName>torque</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>time</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>1106</PacId>
+		<PacName>set_pwm_z</PacName>
+		<PacDesc>Set PWM for Z axis</PacDesc>
+		<DataLen>6</DataLen>
+		<Field>
+			<FldType>float</FldType>
+			<FldName>torque</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>0</FldOffset>
+			<FldLen>32</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+		<Field>
+			<FldType>uint</FldType>
+			<FldName>time</FldName>
+			<FldDesc>Value</FldDesc>
+			<FldValue>0</FldValue>
+			<FldOffset>32</FldOffset>
+			<FldLen>16</FldLen>
+			<FldByteOrder>LE</FldByteOrder>
+			<FldEdit>YES</FldEdit>
+		</Field>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>3</PacId>
+		<PacName>coil1_max_plus</PacName>
+		<PacDesc/>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>4</PacId>
+		<PacName>coil1_max_minus</PacName>
+		<PacDesc/>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>5</PacId>
+		<PacName>coil1_zero</PacName>
+		<PacDesc/>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>6</PacId>
+		<PacName>coil2_max_plus</PacName>
+		<PacDesc/>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>7</PacId>
+		<PacName>coil2_max_minus</PacName>
+		<PacDesc/>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>8</PacId>
+		<PacName>coil2_zero</PacName>
+		<PacDesc/>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>9</PacId>
+		<PacName>coil3_max_plus</PacName>
+		<PacDesc/>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>10</PacId>
+		<PacName>coil3_max_minus</PacName>
+		<PacDesc/>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>11</PacId>
+		<PacName>coil3_zero</PacName>
+		<PacDesc/>
+		<DataLen>0</DataLen>
+	</Packet>
+	<Packet>
+		<PacType>command</PacType>
+		<PacId>12</PacId>
+		<PacName>coils_all_zero</PacName>
+		<PacDesc/>
+		<DataLen>0</DataLen>
+	</Packet>
+	
+	
+	<MemoryBlock>
+		<MemName>FLASH_BASE</MemName>
+		<MemDesc>MCU flash memory</MemDesc>
+		<MemAddr>0x08000000</MemAddr>
+		<MemSize>0x100000</MemSize>
+	</MemoryBlock>
+	<MemoryBlock>
+		<MemName>FW_MAIN</MemName>
+		<MemDesc>Main firmware application</MemDesc>
+		<MemAddr>0x08010000</MemAddr>
+		<MemSize>0x70000</MemSize>
+	</MemoryBlock>
+	<MemoryBlock>
+		<MemName>FW_UPDATE_MEM</MemName>
+		<MemDesc>New firmware version instance</MemDesc>
+		<MemAddr>0x08080000</MemAddr>
+		<MemSize>0x80000</MemSize>
+	</MemoryBlock>
+	<MemoryAccess>
+		<EnterMemModeCmd>0x11F1</EnterMemModeCmd>
+		<ExitMemModeCmd>0x11F1</ExitMemModeCmd>
+		<WriteMemCmd>0xAB01</WriteMemCmd>
+		<WriteMemAddrFld>addr</WriteMemAddrFld>
+		<WriteMemSizeFld>size</WriteMemSizeFld>
+		<WriteMemDataFld>data</WriteMemDataFld>
+		<WriteMemBlockSz>240</WriteMemBlockSz>
+		<WriteMemPause>300</WriteMemPause>
+		<FWUpdateCmd>0xAA00</FWUpdateCmd>
+		<FWUpdAddrFld>addr</FWUpdAddrFld>
+		<FWUpdSizeFld>size</FWUpdSizeFld>
+		<FWUpdCrc32Fld>crc32</FWUpdCrc32Fld>
+		<DefaultWriteMem>FW_UPDATE_MEM</DefaultWriteMem>
+	</MemoryAccess>
+</Device>

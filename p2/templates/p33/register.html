@@ -1,0 +1,53 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'media/style.css' %}">
+<body id="bg" style="background-image: url('{% static 'media/st1.jpg' %}'); background-repeat: no-repeat;background-size: 100%;" a link="white" vlink="white"></body>
+<div class="User">
+<form method="POST">
+    {% csrf_token %}
+<table border="0">
+    <tr>
+        <td>Nom d'utilisateur</td>
+        <td><input type="text" placeholder="Votre Nom et Prénom" name="un" required></td>
+    </tr>
+    <tr>
+        <td>E-mail</td>
+        <td><input type="Email" placeholder="Votre Email" name="email" required></td>
+    </tr>
+    <tr>
+        <td>Mot de passe</td>
+        <td><input type="password" placeholder="Votre Mot de passe" name="pass1" required></td>
+    </tr>
+    <tr>
+        <td>Confirmer Mot de passe</td>
+        <td><input type="password" placeholder="Confirmer Votre Mot de passe" name="pass2" required></td>
+    </tr>
+    <tr>
+        <td>Departement</td>
+        <td><select name="dep">
+            <option value="IT">Info</option>
+            <option value="SP">Space</option>
+            <option value="EM">Electro-Mecanique</option>
+            </select></td>
+    </tr>
+    <tr>
+        <td>Role</td>
+        <td><select name="role">
+            <option value="CE">Admin</option>
+            <option value="SU">Utilisateur nomale</option>
+            </select></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button type="submit">Enregistrer</button></td>
+    </tr>
+</table>
+{% if messages %}
+{% for msg in messages %}
+<b>{{msg}}</b>
+{% endfor %}
+{% endif %}
+<td></td>
+<em>Si tu est deja enregistrer<a href="{% url 'Cpage' %}">Connecter</a></em>
+</form>
+</div>
+</body>
