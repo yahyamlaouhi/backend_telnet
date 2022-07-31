@@ -37,10 +37,11 @@ import json
 
 @api_view(["GET","POST"])
 def photo_save(request):
-    if request=="POST":
-        serializer=uploadImageSerializer(data=request.data)
-        photo=photosaver.objects.create(id_user=serializer.data["id_user"],image=serializer.data["image"])
-        return Response(serializer.data)
+    serializer=uploadImageSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    # print(serializer.data)
+    # photo=photosaver.objects.create(id_user=serializer.data["id_user"],image=serializer.data["image"])
+    return Response(1)
    
 
 @api_view(["GET","POST"])
@@ -94,9 +95,12 @@ def pdf_view(request):
 
     return Response(serializer.data)
 
-@api_view(['POST',"GET"])
+@api_view(['POST'])
 def create_pdf(request):
+    print("jjjjjjjjjjjjjjjjjjjjjjjjjj")
     serializer = CreatePdfSerializer(data=request.data)
+    print("jjjjjjjjjjjjjjjjjjjjjjjjjj")
+
     serializer.is_valid(raise_exception=True)
     annee = serializer.data["annee"]
     mois = serializer.data['mois']
@@ -105,10 +109,12 @@ def create_pdf(request):
     minute = serializer.data['minute']
     second = serializer.data['second']
     fichier=serializer.data['file']
+    print("jjjjjjjjjjjjjjjjjjjjjjjjjj")
     pdf=rapport.objects.create(annee=annee,mois=mois,jour=jour,heure=heure,minute=minute,second=second,file=fichier)
     pdf.save()
+    print(serializer.data)
    
-    return Response(fichier)
+    return Response(15)
 
 {"annee":"1995","mois":"1","jour":"19","file":"yahya.js"}
 

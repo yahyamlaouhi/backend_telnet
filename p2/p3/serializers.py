@@ -22,7 +22,7 @@ class uploadcsvSerializer(serializers.Serializer):
     file=serializers.ImageField()
 
 
-class uploadImageSerializer(serializers.Serializer):
+class uploadImageSerializer(serializers.ModelSerializer):
     class Meta:
         model=photosaver
         fields = '__all__'

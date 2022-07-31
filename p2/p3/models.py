@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from email import header
 from django.db import models
 from pandas import DataFrame
@@ -46,11 +47,11 @@ class rapport(models.Model):
     heure=models.CharField(null=True,max_length=255)
     minute=models.CharField(null=True,max_length=255)
     second=models.CharField(null=True,max_length=255)
-    file=models.BinaryField (blank = True, null = True, editable = True)
+    file=models.TextField(blank = True,default="text")
 
 
 
 class photosaver(models.Model):
-    id_user=models.IntegerField(null=True,max_length=255)
-    image=models.BinaryField (blank = True, null = True, editable = True)
+    user=models.IntegerField(null=True,max_length=255)
+    image=models.TextField(blank = True)
 
