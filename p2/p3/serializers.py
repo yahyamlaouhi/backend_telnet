@@ -1,6 +1,6 @@
 from email import header
 from rest_framework import serializers
-from .models import NUser, csvfile,Table
+from .models import NUser, csvfile,Table, rapport
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.validators import UniqueValidator
@@ -23,6 +23,9 @@ class uploadcsvSerializer(serializers.Serializer):
            
 
        
+class searchSerializer(serializers.Serializer):
+    data=serializers.CharField(max_length=200)
+    msg_id=serializers.CharField(max_length=200)
 
 
 class NUserSerialiser(serializers.ModelSerializer):
@@ -35,6 +38,13 @@ class AdminSerializer(serializers.ModelSerializer):
  
     class Meta:
         model = User
+        fields = '__all__'
+
+
+class CreatePdfSerializer(serializers.ModelSerializer):
+ 
+    class Meta:
+        model = rapport
         fields = '__all__'
 
 

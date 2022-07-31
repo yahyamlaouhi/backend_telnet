@@ -13,10 +13,10 @@ import pandas as pd
 from numpy import AxisError, append, nan
 from bs4 import BeautifulSoup
 import textwrap
-from . models import csvfile, myuploadfile,tablecsv,Table,tablecsvs
-from p3.models import NUser
+from . models import csvfile, myuploadfile, rapport,tablecsv,Table,tablecsvs
+from p3.models import NUser,rapport
 from p2 import settings
-from .serializers import NUserSerialiser,RegisterSerializer,MyTokenObtainPairSerializer,AdminSerializer, csvfileSerialiser, uploadcsvSerializer
+from .serializers import CreatePdfSerializer, NUserSerialiser,RegisterSerializer,MyTokenObtainPairSerializer,AdminSerializer, csvfileSerialiser, searchSerializer, uploadcsvSerializer
 from rest_framework import viewsets
 from rest_framework import generics
 from rest_framework.decorators import api_view
@@ -28,6 +28,8 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+import json
+
 
 
 
@@ -39,6 +41,40 @@ def verify_token(request):
     jwtToken = request.GET.get('token', False)
     decodedData = jwt.decode(jwtToken, "", algorithms=['HS256'], verify=True)
     return Response(decodedData)
+
+
+# @api_view(['GET'])
+# def statistique(request):
+#     num_user=User.objects.filter(is_superuser=)
+#     return Response(decodedData)
+
+@api_view(["GET"])
+def pdf_view(request):
+    annee = request.GET.get('annee', False)
+    mois = request.GET.get('mois', False)
+    jour = request.GET.get('jour', False)
+    pdfs=rapport.objects.filter(annee=annee,mois=mois,jour=jour)
+    serializer = CreatePdfSerializer(pdfs,many=True)
+
+    return Response(serializer.data)
+
+@api_view(['POST',"GET"])
+def create_pdf(request):
+    serializer = CreatePdfSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    annee = serializer.data["annee"]
+    mois = serializer.data['mois']
+    jour = serializer.data['jour']
+    heure = serializer.data['heure']
+    minute = serializer.data['minute']
+    second = serializer.data['second']
+    fichier=serializer.data['file']
+    pdf=rapport.objects.create(annee=annee,mois=mois,jour=jour,heure=heure,minute=minute,second=second,file=fichier)
+    pdf.save()
+   
+    return Response(fichier)
+
+{"annee":"1995","mois":"1","jour":"19","file":"yahya.js"}
 
 
 
@@ -59,15 +95,29 @@ class RegisterView(viewsets.ModelViewSet):
     permission_classes = (AllowAny,)
     serializer_class = RegisterSerializer
 
-class AdminViewSet(viewsets.ModelViewSet):
+class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class =AdminSerializer
 
 
 
-class csvfileViewSet(viewsets.ModelViewSet):
-    queryset = csvfile.objects.all()
-    serializer_class =csvfileSerialiser
+# class csvfileViewSet(viewsets.ModelViewSet):
+#     # queryset = csvfile.objects.all()
+#     serializer_class =csvfileSerialiser
+#     def pre_save(self, obj):
+#         obj.file = self.request.FILES.get('file')
+#     def get_queryset(self):
+#         file=csvfile.objects.last().file
+#         file1=str(file)
+#         data = pd.read_csv(r"C:\Users\USERTEST\Desktop\iheb baccari\New folder\p1\p2\p3\csvs"+str(file1[9:]), delimiter=',')
+#         data_dict = data.to_dict()
+#         data1=json.dumps(data_dict)
+#         print(data_dict)
+
+#         # print(file)
+
+#         # print(file.find("v"))
+#         return [file]
 
 
 @csrf_exempt
@@ -172,49 +222,51 @@ def upload(request):
 
 
 
-@csrf_exempt
+@api_view(["POST","GET"])
 def send_files(request):
-    
-        
         if request.method == 'POST':
+            csv_file = request.FILES["csv_file"]
+            print(csv_file)
 
-            myfiles = request.FILES.getlist('uploadfiles')
+
+            # myfiles = request.FILES.getlist('uploadfiles')
             context = {}
             newElement={}
             
-        for f in myfiles:
-            myuploadfile(myfile=f).save()
-            data = pd.read_csv('p3/csvs/'+ request.FILES['uploadfiles'].name, delimiter=',')
-            data_dict = data.to_dict()
+        # for f in myfiles:
+        #     # myuploadfile(myfile=f).save()
+        #     data = pd.read_csv('p3/csvs/'+ request.FILES['uploadfiles'].name, delimiter=',')
+        #     data_dict = data.to_dict()
             
 
-            for i in  range(0, len(data_dict["Date and time[ms]"])):
-                newElement[i]=(str(data_dict["Message Id"][i]))+"+"+(str(data_dict["Data"][i]))
+        #     for i in  range(0, len(data_dict["Date and time[ms]"])):
+        #         newElement[i]=(str(data_dict["Message Id"][i]))+"+"+(str(data_dict["Data"][i]))
 
-            context['data'] = data_dict
-            context['newElement']=newElement
+        #     context['data'] = data_dict
+        #     context['newElement']=newElement
 
            
-        csv_fp = open(f'p3/csvs/' + request.FILES['uploadfiles'].name, 'r')
-        file_data = csv_fp.read()
-        lines = file_data.split('\n')
-        for line in range(0, len(lines)):
+        # csv_fp = open(f'p3/csvs/' + request.FILES['uploadfiles'].name, 'r')
+        # file_data = csv_fp.read()
+        # lines = file_data.split('\n')
+        # for line in range(0, len(lines)):
 
-            for line in lines:
-                    fields = line.split(',')
-                    data_dict = {}
-                    data_dict['Date'] = fields[0]
-                    data_dict['Stamp'] = fields[1]
-                    data_dict['Direction'] = fields[2]
-                    data_dict['Source'] = fields[3]
-                    data_dict['Destination'] = fields[4]
-                    data_dict['MessageId'] = fields[5]
-                    data_dict['Length'] = fields[6]
-                    data_dict['StatusTx'] = fields[7]
-                    data_dict['Data'] = fields[8]
-                    Table(Date=data_dict['Date'],Stamp=data_dict['Stamp'],Direction=data_dict['Direction'],Source=data_dict['Source'],Destination=data_dict['Destination'],MessageId=data_dict['MessageId'],Length=data_dict['Length'],StatusTx=data_dict['StatusTx'],Data=data_dict['Data']).save()  
+        #     for line in lines:
+        #             fields = line.split(',')
+        #             data_dict = {}
+        #             data_dict['Date'] = fields[0]
+        #             data_dict['Stamp'] = fields[1]
+        #             data_dict['Direction'] = fields[2]
+        #             data_dict['Source'] = fields[3]
+        #             data_dict['Destination'] = fields[4]
+        #             data_dict['MessageId'] = fields[5]
+        #             data_dict['Length'] = fields[6]
+        #             data_dict['StatusTx'] = fields[7]
+        #             data_dict['Data'] = fields[8]
+        #             Table(Date=data_dict['Date'],Stamp=data_dict['Stamp'],Direction=data_dict['Direction'],Source=data_dict['Source'],Destination=data_dict['Destination'],MessageId=data_dict['MessageId'],Length=data_dict['Length'],StatusTx=data_dict['StatusTx'],Data=data_dict['Data']).save()  
+        return Response(1)
 
-        return render(request, "p33/index2.html",context)
+        # return render(request, "p33/index2.html",context)
 
 
 # def datatable(request):
@@ -248,8 +300,13 @@ def check_value_exist(test_dict, value):
             do_exist = True
     return do_exist
 
-@csrf_exempt
+@api_view(['GET',"POST"])
 def search(request):
+    dict={}
+    listR=[]
+    serializer=searchSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+
     context4 = {}
     context = {}
     data=""
@@ -282,15 +339,15 @@ def search(request):
             liste6=[]
             liste7=[]
 
-            data2 = request.POST
-            data3 = data2.get('data')
-            list_data = str(data3).split("+")
-            print(list_data)
+            # data2 = request.POST
+            # data3 = data2.get('data')
+            # list_data = str(data3).split("+")
+           
             # print('list_data des valeurs',list_data)
             # msg_id , data = [ list_data[i] for i in (0, -1) ]
             # print(list_datae)
-            msg_id=list_data[0]
-            data=list_data[1]
+            msg_id=serializer.data["msg_id"]
+            data=serializer.data["data"]
                 # msg_id = str('118')
                 # data = str('1142')
             # print('Message ID :',msg_id)
@@ -335,12 +392,14 @@ def search(request):
                             fldt = (fldt1.text)
                             fldna1 = fld.find("fldname")
                             fldna =(fldna1.text)
+                            
 
                             print("\n")
                             print("Longeur du champ =", lend)
                             print("Nom du champ :", fldna)
                             print("Déscription du champ :", usa)
                             print("Type du champ :", fldt)
+
 
                             len1+=lend
                             j=len1
@@ -388,10 +447,8 @@ def search(request):
                             else:
                                 dle = int(list, 2)
 
-                            print("Position du Data de ce champ:")
-                            print("De :",i)
-                            print("Jusqu'à :",j)
                             print(dle)
+                            listR.append({"Longeur du champ ": lend,"Nom du champ ": fldna,"Déscription du champ ": usa,"Type du champ ": fldt,"resultat en decimale":dle})
                             # liste1 =lend,fldna,usa,fldt,i,j,dle
                             # liste2.append(liste1)
  
@@ -415,8 +472,22 @@ def search(request):
                         context['l1']=l1,l2,l3,l4,l5,l6,l7
                        
             fd.close()
+    print(dict)
+    # list_corrige=[]
+    # for i in range(0,len(listR)):
+    #     l2=[]
+    #     l1=[]
+    #     if listR[i]["Longeur du champ"]==1 and listR[i+1]["Longeur du champ"]==1 and listR[i+2]["Longeur du champ"]==1:
+    #         l2.append(listR[i])
+    #     if
+            
+
+        # list_corrige.append(listR[i])
+
+
+    final_result=json.dumps(listR)
         # return render(request, "p33/rapport.html",{'context4':context4})
-    return render(request, "p33/rapport.html", {'context':context})
+    return Response(final_result)
     # return redirect("http://127.0.0.1:8000/rapport")
     # else:
     #     return HttpResponse('error')

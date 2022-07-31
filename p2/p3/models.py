@@ -39,5 +39,14 @@ class csvfile(models.Model):
     description = models.CharField(null=True,max_length=255)
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
+class rapport(models.Model):
+    annee=models.CharField(null=True,max_length=255)
+    mois=models.CharField(null=True,max_length=255)
+    jour=models.CharField(null=True,max_length=255)
+    heure=models.CharField(null=True,max_length=255)
+    minute=models.CharField(null=True,max_length=255)
+    second=models.CharField(null=True,max_length=255)
+    file=models.CharField(null=True,max_length=255)
+
 
 
