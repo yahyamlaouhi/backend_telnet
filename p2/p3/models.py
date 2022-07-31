@@ -50,3 +50,7 @@ class rapport(models.Model):
 
 
 
+class photosaver(models.Model):
+    id_user=models.IntegerField(null=True,max_length=255)
+    image=models.BinaryField (blank = True, null = True, editable = True)
+

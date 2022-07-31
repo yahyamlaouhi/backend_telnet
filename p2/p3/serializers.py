@@ -1,6 +1,6 @@
 from email import header
 from rest_framework import serializers
-from .models import NUser, csvfile,Table, rapport
+from .models import NUser, csvfile,Table, photosaver, rapport
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.validators import UniqueValidator
@@ -20,6 +20,12 @@ class csvfileSerialiser(serializers.ModelSerializer):
 
 class uploadcsvSerializer(serializers.Serializer):
     file=serializers.ImageField()
+
+
+class uploadImageSerializer(serializers.Serializer):
+    class Meta:
+        model=photosaver
+        fields = '__all__'
            
 
        

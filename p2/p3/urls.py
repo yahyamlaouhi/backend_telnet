@@ -32,6 +32,11 @@ urlpatterns = [
     path('pdf/view/',views.pdf_view,name="pdf_view"),
     path('search/',views.search,name="search"),
     path('stat/',views.statistique,name="stat"),
+    path('photo/ajouter',views.statistique,name="stat"),
+    path('photo/get',views.statistique,name="stat"),
+
+        
+
 
 
 

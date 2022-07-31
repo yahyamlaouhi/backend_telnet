@@ -13,10 +13,10 @@ import pandas as pd
 from numpy import AxisError, append, nan
 from bs4 import BeautifulSoup
 import textwrap
-from . models import csvfile, myuploadfile, rapport,tablecsv,Table,tablecsvs
+from . models import csvfile, myuploadfile, photosaver, rapport,tablecsv,Table,tablecsvs
 from p3.models import NUser,rapport
 from p2 import settings
-from .serializers import CreatePdfSerializer, NUserSerialiser,RegisterSerializer,MyTokenObtainPairSerializer,AdminSerializer, csvfileSerialiser, searchSerializer, uploadcsvSerializer
+from .serializers import CreatePdfSerializer, NUserSerialiser,RegisterSerializer,MyTokenObtainPairSerializer,AdminSerializer, csvfileSerialiser, searchSerializer, uploadImageSerializer, uploadcsvSerializer
 from rest_framework import viewsets
 from rest_framework import generics
 from rest_framework.decorators import api_view
@@ -35,8 +35,21 @@ import json
 
 
 
+@api_view(["GET","POST"])
+def photo_save(request):
+    if request=="POST":
+        serializer=uploadImageSerializer(data=request.data)
+        photo=photosaver.objects.create(id_user=serializer.data["id_user"],image=serializer.data["image"])
+        return Response(serializer.data)
+   
 
-
+@api_view(["GET","POST"])
+def get_photo(request):
+    if request=="GET":
+        serializer=uploadImageSerializer(data=request.data)
+        user=request.data["user_id"]
+        c=photosaver.objects.filter(user_id=user)
+        return Response([c.image])
 
 @api_view(['GET'])
 def verify_token(request):
