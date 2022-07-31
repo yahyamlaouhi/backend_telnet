@@ -49,26 +49,27 @@ from django.http import JsonResponse
 def statistique(request):
     num_rapport=rapport.objects.all()
     num_rapport=len(num_rapport)
-    result_annee = (rapport.objects
+    result_annee = len((rapport.objects
     .values('annee')
     .annotate(dcount=Count('annee'))
-    .order_by()
+    .order_by())
         )
-    result_mois = (rapport.objects
+    result_mois =len( (rapport.objects
     .values('mois')
     .annotate(dcount=Count('mois'))
-    .order_by()
+    .order_by())
 )
-    result_jour = (rapport.objects
+    result_jour = len((rapport.objects
     .values('jour')
     .annotate(dcount=Count('jour'))
-    .order_by()
+    .order_by())
 )
-    num_admin=User.objects.filter(is_superuser=1)
-    num_user=User.objects.filter(is_superuser=0)
+    num_admin=len(User.objects.filter(is_superuser=1))
+    num_user=len(User.objects.filter(is_superuser=0))
     dict=[{"num_rapport":num_rapport},{"num_user":num_user},{"num_admin":num_admin},{"result_jour" :result_jour} ,{"result_mois":result_mois},{"result_annee":result_annee}]
-    # data=json.dumps(dict)
-    return Response(dict)
+    data=json.dumps(dict)
+    print(dict)
+    return Response(data)
 
 @api_view(["GET"])
 def pdf_view(request):
@@ -334,11 +335,11 @@ def search(request):
     data=""
     msg_id=""
     data2=""
-    # dle=[],
-    # lend=[],
-    # fldna=[],
-    # usa=[],
-    # fldt=[],
+    # Resultat=[],
+    # LongeurduChamp=[],
+    # nomField=[],
+    # DescriptionduChamp=[],
+    # TypeduChamp=[],
     # i=[],
     # j=[],
 
@@ -380,58 +381,69 @@ def search(request):
 
             count = int(msg_id, 16)
             print("Valeur décimal = ", count)
+            fmap=open('p3/map/map.xml')
 
 
             lis =['p3/xml/CubeSat_carrier_msgid.xml','p3/xml/CubeSat_carrier_msgid.xml','p3/xml/OBCU_msgid.xml','p3/xml/PS_msgid.xml','p3/xml/UHF_msgid.xml','p3/xml/VMS_msgid_en.xml','p3/xml/Wheel_msgid.xml']
             for k in lis:
                 fd = open(k, 'r')
+                indice=k.find('l')
+                print('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhffffffffffff',fd)
 
                 xml_file = fd.read()
 
-                lend = 0
-                lengthpos = 0
+                LongeurduChamp = 0
+                PositionduChamp = 0
                 num_of_bits=0
                 soup = BeautifulSoup(xml_file, 'lxml')
+                map=BeautifulSoup(fmap, 'lxml')
+                
                 for tag in soup.findAll("packet"):
-                    len1 = lend
+
+                    LongeurDuChamp = LongeurduChamp
                     if int(tag.find("pacid").text) == count:
+                        print(k[indice+2:])
+                        # for tag2 in soup.findAll('DevModel'):
+                            # if int(tag2.find(k[indice+2:]).text)===
+                    
+
                         print("id", int(tag.find("pacid").text))
                         if int(tag.find("datalen").text):
-                            dlen = int(tag.find("datalen").text)
-                            num_of_bits= dlen * 8
-                            print(dlen)
+                            DataLength = int(tag.find("datalen").text)
+                            num_of_bits= DataLength * 8
+                            print(DataLength)
                             
                         scale = 16
 
                         msg_id = bin(int(data, scale))[2:].zfill(num_of_bits)
 
-                        for fld in tag.findAll("field"):
-                            usa1 = fld.find("fldlen")
-                            lend = int(usa1.text)
-                            fld1 = fld.find("flddesc")
-                            usa = (fld1.text)
-                            fldt1 = fld.find("fldtype")
-                            fldt = (fldt1.text)
-                            fldna1 = fld.find("fldname")
-                            fldna =(fldna1.text)
+                        for Field in tag.findAll("field"):
+                            LongeurChamp = Field.find("fldlen")
+                            LongeurduChamp = int(LongeurChamp.text)
+                            DescriptionChamp = Field.find("flddesc")
+                            DescriptionduChamp = (DescriptionChamp.text)
+                            TypeChamp = Field.find("fldtype")
+                            TypeduChamp = (TypeChamp.text)
+                            FieldName = Field.find("fldname")
+                            nomField =(FieldName.text)
                             
 
                             print("\n")
-                            print("Longeur du champ =", lend)
-                            print("Nom du champ :", fldna)
-                            print("Déscription du champ :", usa)
-                            print("Type du champ :", fldt)
+                            print("Longeur du champ =", LongeurduChamp)
+                            print("Nom du champ :", nomField)
+                            print("Déscription du champ :", DescriptionduChamp)
+                            print("Type du champ :", TypeduChamp)
 
 
-                            len1+=lend
-                            j=len1
-                            i=lengthpos
-                            lengthpos += lend
+                            LongeurDuChamp+=LongeurduChamp
+                            j=LongeurDuChamp
+                            i=PositionduChamp
+                            PositionduChamp += LongeurduChamp
 
-                            stri = msg_id [int(i):int(j)]
+                            PositionString = msg_id [int(i):int(j)]
 
-                            if (lend >= 16):
-                                split = textwrap.wrap(stri, 8)
+                            if (LongeurduChamp >= 16):
+                                split = textwrap.wrap(PositionString, 8)
                                 list = []
                                 if len(split) % 2 == 0:
                                     for n in range(0, len(split), 2):
@@ -450,40 +462,40 @@ def search(request):
                                             list.append(split[n])
                                 list = ''.join(list)
                             else:
-                                list = stri
+                                list = PositionString
 
-                            if fldt == 'int':
+                            if TypeduChamp == 'int':
                                 if list[0] == '1':
                                     sign = -1
                                 else:
                                     sign = 1
-                                dle = sign*int(list[1:], 2)
-                            elif fldt == 'float':
+                                Resultat = sign*int(list[1:], 2)
+                            elif TypeduChamp == 'float':
                                 sign_bit = int(list[0])
                                 exp_bias = int(list[1:9], 2)
                                 decimal = mantissa(list[9:])
                                 exp_unbias = exp_bias-127
-                                dle = pow(-1, sign_bit)*(1+decimal)*pow(2, exp_unbias)
+                                Resultat = pow(-1, sign_bit)*(1+decimal)*pow(2, exp_unbias)
                             elif list =="":
-                                dle=list
+                                Resultat=list
                             else:
-                                dle = int(list, 2)
+                                Resultat = int(list, 2)
 
-                            print(dle)
-                            listR.append({"Longeur du champ ": lend,"Nom du champ ": fldna,"Déscription du champ ": usa,"Type du champ ": fldt,"resultat en decimale":dle})
-                            # liste1 =lend,fldna,usa,fldt,i,j,dle
+                            print(Resultat)
+                            listR.append({"Longeur du champ ": LongeurduChamp,"Nom du champ ": nomField,"Déscription du champ ": DescriptionduChamp,"Type du champ ": TypeduChamp,"resultat en decimale":Resultat})
+                            # liste1 =LongeurduChamp,nomField,DescriptionduChamp,TypeduChamp,i,j,Resultat
                             # liste2.append(liste1)
  
                             # l1=(liste2)
                             # context4['l1']=l1
 
-                            liste1.append(lend)
-                            liste2.append(fldna)
-                            liste3.append(usa)
-                            liste4.append(fldt)
+                            liste1.append(LongeurduChamp)
+                            liste2.append(nomField)
+                            liste3.append(DescriptionduChamp)
+                            liste4.append(TypeduChamp)
                             liste5.append(i)
                             liste6.append(j)
-                            liste7.append(dle)
+                            liste7.append(Resultat)
                         l1=(liste1)
                         l2=(liste2)
                         l3=(liste3)

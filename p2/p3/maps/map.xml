@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Sputnik xmlns="unican_map_schema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="unican_map_schema unican_map_schema.xsd">
+	<SputnikName>SXC3-194</SputnikName>
+	<SputnikDesc>ChallengeOne-FM</SputnikDesc>
+	<CenterAddr>0x01</CenterAddr>
+	<System>
+		<SysName>Ground</SysName>
+		<SysDesc>Ground systems</SysDesc>
+		<Module>
+			<ModName>Laboratory radio</ModName>
+			<ModDesc>Radio subsystem</ModDesc>
+			<Device>
+				<DevModel>UHF_msgid</DevModel>
+				<DevName>Ground radio</DevName>
+				<DevDesc>RF_ground</DevDesc>
+				<DevAddress>0x1f</DevAddress>
+			</Device>
+			<Device>
+				<DevModel>TLNT_LRTSC</DevModel>
+				<DevName>TLNT Ground radio</DevName>
+				<DevDesc>Telnet LoRa Transceiver 401MHz</DevDesc>
+				<DevAddress>0x1E</DevAddress>
+			</Device>
+		</Module>
+	</System>
+	<System>
+		<SysName>Satellite</SysName>
+		<SysDesc>Satellite</SysDesc>
+		<Module>
+			<ModName>Radio</ModName>
+			<ModDesc>Onboard radio subsystem</ModDesc>
+			<Device>
+				<DevModel>UHF_msgid</DevModel>
+				<DevName>Onboard radio</DevName>
+				<DevDesc>SXC-UHF-02</DevDesc>
+				<DevAddress>0x2</DevAddress>
+			</Device>
+		</Module>
+		<Module>
+			<ModName>Control</ModName>
+			<ModDesc>Control subsystem</ModDesc>
+			<Device>
+				<DevModel>MTCU_msgid</DevModel>
+				<DevName>Coils driver</DevName>
+				<DevDesc>SXC-MB-04</DevDesc>
+				<DevAddress>0x06</DevAddress>
+			</Device>
+			<Device>
+				<DevModel>OBCU_msgid</DevModel>
+				<DevName>ADCS controller</DevName>
+				<DevDesc>SXC-MB-04</DevDesc>
+				<DevAddress>0x05</DevAddress>
+			</Device>
+			<Device>
+				<DevModel>VMS_msgid</DevModel>
+				<DevName>Attitude rate and Magnetometer</DevName>
+				<DevDesc>SXC-MB-04</DevDesc>
+				<DevAddress>0x09</DevAddress>
+			</Device>
+			<Device>
+				<DevModel>CubeSat_carrier_msgid</DevModel>
+				<DevName>LP-MCU</DevName>
+				<DevDesc>SXC-MB-04</DevDesc>
+				<DevAddress>0x19</DevAddress>
+			</Device>
+		</Module>
+		<Module>
+			<ModName>Power Supply</ModName>
+			<ModDesc>Power supply subsystem</ModDesc>
+			<Device>
+				<DevModel>PS_msgid</DevModel>
+				<DevName>PSS</DevName>
+				<DevDesc>SXC-PSS-03</DevDesc>
+				<DevAddress>0x4</DevAddress>
+			</Device>   
+		</Module>
+		<Module>
+			<ModName>Payloads</ModName>
+			<ModDesc>Payload devices</ModDesc>
+			<Device>
+				<DevModel>TLNT_LRTSC</DevModel>
+				<DevName>TLNT On Board Radio</DevName>
+				<DevDesc>Telnet LoRa Transceiver 401MHz</DevDesc>
+				<DevAddress>0x16</DevAddress>
+			</Device>
+			<Device>
+				<DevModel>Payload_SDR</DevModel>
+				<DevName>Payload_SDR</DevName>
+				<DevDesc/>
+				<DevAddress>0x1C</DevAddress>
+			</Device>
+			<Device>
+				<DevModel>Payload_LRGW</DevModel>
+				<DevName>Payload_LRGW</DevName>
+				<DevDesc>LoRa Sat software GW</DevDesc>
+				<DevAddress>0x1D</DevAddress>
+			</Device>
+			<Device>
+				<DevModel>File_server</DevModel>
+				<DevName>File_server_SDR</DevName>
+				<DevDesc/>
+				<DevAddress>0x1A</DevAddress>
+			</Device>
+			<Device>
+				<DevModel>File_server</DevModel>
+				<DevName>File_server_LRGW</DevName>
+				<DevDesc/>
+				<DevAddress>0x1B</DevAddress>
+			</Device>
+			<Device>
+				<DevModel>Skywalker</DevModel>
+				<DevName>Skywalker OBC RPI CM3</DevName>
+				<DevDesc/>
+				<DevAddress>0x17</DevAddress>
+			</Device>
+			<Device>
+				<DevModel>CAM_PILOT_ON_OBC</DevModel>
+				<DevName>CAM_PILOT OBC RPI CM3</DevName>
+				<DevDesc/>
+				<DevAddress>0x18</DevAddress>
+			</Device>
+		</Module>
+		<Module>
+			<ModName>ADCS devices</ModName>
+			<ModDesc>ADCS subsystem</ModDesc>
+			<Device>
+				<DevModel>sunset_msg_id</DevModel>
+				<DevName>Sun sensor Z-</DevName>
+				<DevDesc>SXC-SD-01</DevDesc>
+				<DevAddress>0x15</DevAddress>
+			</Device> 
+			<Device>
+				<DevModel>sunset_msg_id</DevModel>
+				<DevName>Sun sensor Z+</DevName>
+				<DevDesc>SXC-SD-01</DevDesc>
+				<DevAddress>0x14</DevAddress>
+			</Device> 
+			<Device>
+				<DevModel>sunset_msg_id</DevModel>
+				<DevName>Sun sensor Y-</DevName>
+				<DevDesc>SXC-SD-01</DevDesc>
+				<DevAddress>0x13</DevAddress>
+			</Device> 
+			<Device>
+				<DevModel>sunset_msg_id</DevModel>
+				<DevName>Sun sensor Y+</DevName>
+				<DevDesc>SXC-SD-01</DevDesc>
+				<DevAddress>0x12</DevAddress>
+			</Device> 
+			<Device>
+				<DevModel>sunset_msg_id</DevModel>
+				<DevName>Sun sensor X-</DevName>
+				<DevDesc>SXC-SD-01</DevDesc>
+				<DevAddress>0x11</DevAddress>
+			</Device> 
+			<Device>
+				<DevModel>Wheel_msgid</DevModel>
+				<DevName>Flywheel X+</DevName>
+				<DevDesc>SXC-FW4-02</DevDesc>
+				<DevAddress>0xA</DevAddress>
+			</Device> 
+			<Device>
+				<DevModel>Wheel_msgid</DevModel>
+				<DevName>Flywheel X-</DevName>
+				<DevDesc>SXC-FW4-02</DevDesc>
+				<DevAddress>0xB</DevAddress>
+			</Device> 
+			<Device>
+				<DevModel>Wheel_msgid</DevModel>
+				<DevName>Flywheel Y+</DevName>
+				<DevDesc>SXC-FW4-02</DevDesc>
+				<DevAddress>0xC</DevAddress>
+			</Device> 
+			<Device>
+				<DevModel>Wheel_msgid</DevModel>
+				<DevName>Flywheel Y-</DevName>
+				<DevDesc>SXC-FW4-02</DevDesc>
+				<DevAddress>0xD</DevAddress>
+			</Device> 
+		</Module>
+	</System>
+</Sputnik>
