@@ -31,6 +31,8 @@ urlpatterns = [
     path('pdf/create/',views.create_pdf,name="pdf_create"),
     path('pdf/view/',views.pdf_view,name="pdf_view"),
     path('search/',views.search,name="search"),
+    path('stat/',views.statistique,name="stat"),
+
 
 
 

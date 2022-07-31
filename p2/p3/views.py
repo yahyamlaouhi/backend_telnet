@@ -20,6 +20,8 @@ from .serializers import CreatePdfSerializer, NUserSerialiser,RegisterSerializer
 from rest_framework import viewsets
 from rest_framework import generics
 from rest_framework.decorators import api_view
+from django.db.models import Count
+
 
 
 from django.contrib.auth.models import User
@@ -42,11 +44,31 @@ def verify_token(request):
     decodedData = jwt.decode(jwtToken, "", algorithms=['HS256'], verify=True)
     return Response(decodedData)
 
-
-# @api_view(['GET'])
-# def statistique(request):
-#     num_user=User.objects.filter(is_superuser=)
-#     return Response(decodedData)
+from django.http import JsonResponse
+@api_view(['GET'])
+def statistique(request):
+    num_rapport=rapport.objects.all()
+    num_rapport=len(num_rapport)
+    result_annee = (rapport.objects
+    .values('annee')
+    .annotate(dcount=Count('annee'))
+    .order_by()
+        )
+    result_mois = (rapport.objects
+    .values('mois')
+    .annotate(dcount=Count('mois'))
+    .order_by()
+)
+    result_jour = (rapport.objects
+    .values('jour')
+    .annotate(dcount=Count('jour'))
+    .order_by()
+)
+    num_admin=User.objects.filter(is_superuser=1)
+    num_user=User.objects.filter(is_superuser=0)
+    dict=[{"num_rapport":num_rapport},{"num_user":num_user},{"num_admin":num_admin},{"result_jour" :result_jour} ,{"result_mois":result_mois},{"result_annee":result_annee}]
+    # data=json.dumps(dict)
+    return Response(dict)
 
 @api_view(["GET"])
 def pdf_view(request):
