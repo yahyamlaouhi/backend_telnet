@@ -46,7 +46,7 @@ class rapport(models.Model):
     heure=models.CharField(null=True,max_length=255)
     minute=models.CharField(null=True,max_length=255)
     second=models.CharField(null=True,max_length=255)
-    file=models.CharField(null=True,max_length=255)
+    file=models.BinaryField (blank = True, null = True, editable = True)
 
 
 
